@@ -9,7 +9,6 @@ class Tab1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final GetController myController = Get.find<GetController>();
     return Scaffold(
       appBar: AppBar(centerTitle: true, title: const Text("PAGE 2")),
       body: Center(
@@ -24,7 +23,6 @@ class Tab1 extends StatelessWidget {
                 withNavBar: true,
                 screen: const PageThree(),
               ),
-              // Helper.pushNamed(AppRoutes.pagethree),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,

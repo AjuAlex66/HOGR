@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hogr/common/custombutton.dart';
 import 'package:hogr/utils/helper.dart';
 import 'package:hogr/views/bottomnavigation/bottomnavigation.dart';
@@ -12,7 +13,7 @@ class PageOne extends StatelessWidget {
       appBar: AppBar(centerTitle: true, title: const Text("PAGE 1")),
       body: Center(
         child: CustomMaterialButton(
-          onPressed: () => Helper.pushReplacement(const BottomNavigation()),
+          onPressed: () => Get.off(() => const BottomNavigation()),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,

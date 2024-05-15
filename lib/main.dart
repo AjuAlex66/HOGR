@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
               color: Colors.white,
               fontWeight: FontWeight.w600,
               fontFamily: 'Poppins',
-              fontSize: 26,
+              fontSize: 18,
             )),
         fontFamily: 'Poppins',
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),

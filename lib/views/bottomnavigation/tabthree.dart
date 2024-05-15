@@ -24,7 +24,6 @@ class Tab3 extends StatelessWidget {
                 withNavBar: false,
                 screen: const PageFive(),
               ),
-              // Helper.pushNamed(AppRoutes.pagethree),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -43,7 +42,6 @@ class Tab3 extends StatelessWidget {
                 withNavBar: true,
                 screen: const PageSix(),
               ),
-              // Helper.pushNamed(AppRoutes.pagethree),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
