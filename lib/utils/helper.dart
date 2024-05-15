@@ -1,8 +1,12 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class Helper {
+  static PersistentTabController? controller =
+      PersistentTabController(initialIndex: 0);
+
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   static BuildContext? context = navigatorKey.currentContext;
   static final height = MediaQuery.of(context!).size.height;
@@ -31,17 +35,22 @@ class Helper {
 
   static push(dynamic route) => Navigator.push(
       context!, MaterialPageRoute(builder: ((context) => route)));
+  static pushNamed(String name) => Navigator.pushNamed(
+        context!,
+        name,
+      );
 
   static pushReplacement(dynamic route) {
     return Navigator.pushReplacement(
-      context!, MaterialPageRoute(builder: ((context) => route)));
+        context!, MaterialPageRoute(builder: ((context) => route)));
   }
 
   static pushReplacementRemove(String namedRoute) => Navigator.of(context!)
-        .pushNamedAndRemoveUntil(namedRoute, (Route<dynamic> route) => false);
+      .pushNamedAndRemoveUntil(namedRoute, (Route<dynamic> route) => false);
 
-  static pushReplacementWithDelay(dynamic route, [delay]) => Future.delayed(Duration(seconds: delay ?? 3), () async {
-      Navigator.pushReplacement(
-          context!, MaterialPageRoute(builder: ((context) => route)));
-    });
+  static pushReplacementWithDelay(dynamic route, [delay]) =>
+      Future.delayed(Duration(seconds: delay ?? 3), () async {
+        Navigator.pushReplacement(
+            context!, MaterialPageRoute(builder: ((context) => route)));
+      });
 }

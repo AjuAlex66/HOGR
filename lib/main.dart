@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hogr/routes/approutes.dart';
 import 'package:hogr/utils/helper.dart';
 import 'package:hogr/views/pageone.dart';
 
@@ -15,6 +16,8 @@ class MyApp extends StatelessWidget {
       navigatorKey: Helper.navigatorKey,
       debugShowCheckedModeBanner: false,
       title: 'HOGR Foods',
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.routes,
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
             iconTheme: IconThemeData(color: Colors.white),
