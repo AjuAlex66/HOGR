@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hogr/getx/controller.dart';
 import 'package:hogr/routes/approutes.dart';
 import 'package:hogr/utils/helper.dart';
 import 'package:hogr/views/pageone.dart';
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
       title: 'HOGR Foods',
       initialRoute: AppRoutes.initialRoute,
       routes: AppRoutes.routes,
+      initialBinding: BindingsBuilder(() {
+        Get.put(GetController());
+      }),
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
             iconTheme: IconThemeData(color: Colors.white),
@@ -25,12 +29,12 @@ class MyApp extends StatelessWidget {
             titleTextStyle: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w600,
-              fontFamily: 'Sedan',
+              fontFamily: 'Poppins',
               fontSize: 26,
             )),
-        fontFamily: 'Sedan',
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
-        useMaterial3: true,
+        fontFamily: 'Poppins',
+        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
+        useMaterial3: false,
       ),
       home: const PageOne(),
     );

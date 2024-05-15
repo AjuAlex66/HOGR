@@ -1,10 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:hogr/getx/controller.dart';
-import 'package:hogr/routes/approutes.dart';
 import 'package:hogr/utils/helper.dart';
-import 'package:hogr/views/bottomnavigation/tabone.dart';
-import 'package:hogr/views/pagetwo.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class BottomNavigation extends StatefulWidget {
@@ -15,49 +11,32 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  final GetController _myController = Get.put(GetController());
   // PersistentTabController? _controller;
   // final RxInt currentIndex = 0.obs;
+  List<String> tabs = ["Tab 1", "Tab 2", "Tab 3"];
   final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(centerTitle: true, title: const Text("PAGE 2")),
       body: PersistentTabView(
         key: _navigatorKey,
         context,
         controller: Helper.controller,
-        confineInSafeArea: true,
         handleAndroidBackButtonPress: true,
-        stateManagement: true,
-        popAllScreensOnTapOfSelectedTab: true,
         popActionScreens: PopActionScreensType.all,
-        screens: _myController.pages,
-        hideNavigationBar: false,
+        screens: Helper.getXController.pages,
         resizeToAvoidBottomInset: true,
-        items: [
-          PersistentBottomNavBarItem(
-            icon: Helper.shrink(),
-            title: "Tab 1",
-            activeColorPrimary: Colors.black,
-            inactiveColorPrimary: Colors.grey,
-            inactiveColorSecondary: Colors.purple,
-            routeAndNavigatorSettings: RouteAndNavigatorSettings(
-                initialRoute: '/', routes: AppRoutes.routes),
-          ),
-          PersistentBottomNavBarItem(
-              icon: Helper.shrink(),
-              title: "Tab 2",
-              activeColorPrimary: Colors.black,
-              inactiveColorPrimary: Colors.grey,
-              inactiveColorSecondary: Colors.purple),
-          PersistentBottomNavBarItem(
-              icon: Helper.shrink(),
-              title: "Tab 3",
-              activeColorPrimary: Colors.black,
-              inactiveColorPrimary: Colors.grey,
-              inactiveColorSecondary: Colors.purple),
-        ],
+        navBarStyle: NavBarStyle.style1,
+        items: List.generate(
+          tabs.length,
+          (index) => PersistentBottomNavBarItem(
+              icon: const Icon(Icons.touch_app),
+              title: tabs[index],
+              activeColorPrimary: CupertinoColors.black,
+              inactiveColorPrimary: CupertinoColors.systemGrey),
+        ),
       ),
     );
     // return DefaultTabController(

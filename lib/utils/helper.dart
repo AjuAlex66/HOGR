@@ -1,11 +1,15 @@
 import 'dart:async';
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
+import 'package:hogr/getx/controller.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class Helper {
   static PersistentTabController? controller =
       PersistentTabController(initialIndex: 0);
+  static final GetController getXController = Get.put(GetController());
 
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   static BuildContext? context = navigatorKey.currentContext;
@@ -53,4 +57,6 @@ class Helper {
         Navigator.pushReplacement(
             context!, MaterialPageRoute(builder: ((context) => route)));
       });
+
+  static showLog(String? message) => log(message!);
 }
