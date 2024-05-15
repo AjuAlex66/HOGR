@@ -9,12 +9,12 @@ class CustomMaterialButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      onPressed: () {},
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18.0),
-          side: const BorderSide(color: Colors.black)),
-      color: Colors.white,
-      child: child ?? Helper.shrink()
-    );
+        minWidth: Helper.width / 3,
+        onPressed: onPressed,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(18.0),
+            side: const BorderSide(color: Colors.black)),
+        color: Colors.white,
+        child: child ?? Helper.shrink());
   }
 }

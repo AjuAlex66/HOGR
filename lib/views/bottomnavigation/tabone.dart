@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:hogr/common/custombutton.dart';
 import 'package:hogr/utils/helper.dart';
 
-class PageTwo extends StatelessWidget {
-  const PageTwo({super.key});
+class Tab1 extends StatelessWidget {
+  const Tab1({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return 
-    Scaffold(
-      appBar: AppBar(centerTitle: true, title: const Text("PAGE 2")),
+    return Scaffold(
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
